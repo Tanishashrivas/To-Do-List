@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { darkMode, lightMode } from "./ToggleMode";
 
 function Header() {
   const [mode, setMode] = useState("light");
@@ -18,7 +17,7 @@ function Header() {
   return (
     <div className="header">
       <h1 className="title">Todo List</h1>
-      <button className="toggleModeBtn modeLight" onClick={handleModeChange}>🌙</button>
+      {/* <button className="toggleModeBtn modeLight" onClick={handleModeChange}>🌙</button> */}
     </div>
   );
 }

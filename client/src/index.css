@@ -1,6 +1,8 @@
 body {
-  width: 50%;
+  width: 45%;
   margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(0, 0, 0, 0.795);
 }
 
 .header {
@@ -10,7 +12,7 @@ body {
 
 .title {
   font-weight: 200;
-  color: #020238;
+  color: white;
 }
 .toggleModeBtn {
   font-size: 1.1rem;
@@ -18,7 +20,7 @@ body {
   background-color: rgb(82, 81, 81);
   border-radius: 50%;
   padding: 3px 6px;
-  margin: 6vh 0 6vh 34vw;
+  margin: 6vh 0 6vh 28vw;
 }
 
 .form {
@@ -26,18 +28,19 @@ body {
 }
 
 .formInput {
-  width: 87.3%;
-  padding: 5px;
+  width: 84%;
+  padding: 6px;
   border: none;
   outline: none;
   font-size: 1.1rem;
   margin: 0 4px;
+  border-radius: 3px;
   border-bottom: 2px solid #01011847;
 }
 
 .add {
-  padding: 4px 17px;
-  background-color: #eb0404f6;
+  padding: 8px 17px;
+  background-color: rgb(18, 175, 13);
   color: white;
   border-radius: 5px;
   border: 1px solid #3636367d;
@@ -46,22 +49,27 @@ body {
   margin: 0 3px;
 }
 
-.ulTaskList {
-  list-style: none;
-  padding: 10px;
+.olTaskList {
+  padding: 10px 4px;
 }
 
 .listItem {
-  background-color: #01012bd0;
-  color: white;
-  width: 98.5%;
-  padding: 6px 9px;
-  border-radius: 3px;
-  font-size: 1.1rem;
+  padding: 6px ;
+  border: 2px solid rgba(114, 113, 113, 0.281);
+  border-radius: 4px;
   margin: 4px 0;
+  display: flex;
+  margin-bottom: 10px;
+}
+.textt{
+  font-size: 1.4rem;
+    flex: 1;
+    margin: 2px;
+    color: white;
+    font-weight: bold;
 }
 
-.listItem::first-letter {
+.textt::first-letter {
   text-transform: uppercase;
 }
 
@@ -97,4 +105,35 @@ body {
 .listItemDark,
 body {
   transition: background-color 0.4s ease, color 0.4s ease; /* Smooth transition for background-color and color */
+}
+
+/* buttons */
+.listItem button{
+  padding: 4px 4px;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color .5s ease;
+}
+
+.delete{
+  background-color: hsl(0, 94%, 54%);
+}
+.delete:hover{
+  background-color: hsl(0, 94%, 44%);
+}
+.moveUp{
+  background-color: hsl(241, 88%, 61%);
+}
+.moveUp:hover{
+  background-color: hsl(241, 88%, 51%);
+}
+.moveDown{
+  background-color: hsl(241, 88%, 61%);
+}
+.moveDown:hover{
+  background-color: hsl(241, 88%, 51%);
 }
