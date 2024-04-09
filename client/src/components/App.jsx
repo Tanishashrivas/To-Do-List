@@ -9,13 +9,14 @@ function App() {
 
   const addTask = (task) => {
     if(task.trim() !== ""){ //to prevent the empty string from getting added
-    setTasks(t => [...t, task]);
+    setTasks(t => [...t, {task:task, completed:false}]);
     }
   };
 
   return (
     <>
       <Header />
+      {console.log(tasks)}
       <TodoForm addTask={addTask}/>
       <ItemList tasks={tasks} setTasks={setTasks}/>
     </>

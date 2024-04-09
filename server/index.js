@@ -4,6 +4,7 @@ import Connection from "./database/db.js";   //extension is necessary
 import todoModel from "./database/schema.js";
 
 const app = express();
+// const router = express.Router();
 const port = 3000;
 
 Connection();
@@ -27,6 +28,27 @@ app.post("/todos", async(req,res)=> {
 
     // console.log("Received data:", text);
 });
+
+app.post("/delete", async(req, res) => {
+    const {temp} = req.body;
+    try{
+        await todoModel.deleteOne({temp});
+    }catch(error){
+        console.error("Error deleting the data", error);
+        res.status(500).json({ message: "Error deleting data" });
+    }
+})
+
+app.get("/tasks", async(req, res) => {
+    try{
+        const taskList = await todoModel.find(); //fetching all the documents
+
+        res.json(taskList);
+    }catch(error){
+        res.status(501).json({error: "Error fetching the data"});
+        console.log("Error fetching the data", error);
+    }
+})
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
