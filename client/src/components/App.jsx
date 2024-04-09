@@ -1,15 +1,15 @@
+import {useState} from "react";
+import PropTypes from "prop-types";
 import Header from "./Header";
 import TodoForm from "./TodoForm";
 import ItemList from "./ItemList";
-import {useState} from "react";
-import PropTypes from "prop-types";
 
 function App() {
   const [tasks, setTasks] = useState([]);
 
   const addTask = (task) => {
     if(task.trim() !== ""){ //to prevent the empty string from getting added
-    setTasks([...tasks, task]);
+    setTasks(t => [...t, {task:task, completed:false}]);
     }
   };
 
@@ -17,7 +17,7 @@ function App() {
     <>
       <Header />
       <TodoForm addTask={addTask}/>
-      <ItemList tasks={tasks}/>
+      <ItemList tasks={tasks} setTasks={setTasks}/>
     </>
   );
 }

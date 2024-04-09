@@ -28,7 +28,7 @@ function TodoForm({addTask}) {
     <form className="form" onSubmit={onFormSubmit} action="/todos" method="POST">
       <input
         className="formInput"
-        placeholder="Enter to do..."
+        placeholder="Enter the task..."
         value={text}
         onChange={(e) => handleInputChange(e)}
       />
